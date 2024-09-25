@@ -1,16 +1,16 @@
 # Postgres Columnar to Heap Performance Test Procedure
 
-This is a short procedure we developed to obtain simple write-metrics comparing Postgres Heap to Columnar storage performance. We wrote this code as a follow-up to an audience question from the Chicago Postgres User Group about how Columnar storage compared to standard heap.
+This is a short procedure we developed to obtain simple write-metrics comparing Postgres Heap to Columnar storage performance. Tembo presented the [pg_timeseries](https://github.com/tembo-io/pg_timeseries) extension to the Chicago Postgres User Group. We wrote this code as a follow-up to an audience question about how Columnar storage behavior compared to standard heap.
 
 ## Installation
 
-The tables and functions in this library are defined in the `create-test-schema.sql` file of this repository. Install them into a working Postgres instance with the pg-timeseries extension installed:
+The tables and functions in this library are defined in the `create-test-schema.sql` file of this repository. Install them into a working Postgres instance with the pg_timeseries extension installed:
 
 ```sh
 psql -f create-test-schema.sql postgres
 ```
 
-This library also includes a `docker-compose.yaml` file that will start a Postgres container with pg-timeseries enabled. To use it, change to the directory with the `docker-compose.yaml` and:
+This library also includes a `docker-compose.yaml` file that will start a Postgres container with pg_timeseries enabled. To use it, change to the directory with the `docker-compose.yaml` and:
 
 ```sh
 docker compose create
@@ -23,7 +23,7 @@ Then install the benchmark library:
 psql -h localhost -U postgres -f create-test-schema.sql postgres
 ```
 
-Alternatively, create a Tembo [Hobby instance](https://cloud.tembo.io/) and install the pg-timeseries extension through the web interface.
+Alternatively, create a Tembo [Hobby instance](https://cloud.tembo.io/) and install the pg_timeseries extension through the web interface.
 
 ## How the Benchmark Works
 
